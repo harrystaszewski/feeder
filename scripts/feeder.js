@@ -1,17 +1,25 @@
+var tranTime = 3000;
+var holdTime = 5000;
+var vOffset = 3;
+
 $(function() {
-    setTimeout("location.reload(false);",10000);
+    //window.setInterval(function() {
+    //    showNextMessage();
+    //}, ((tranTime * 2) + holdTime));
     showNextMessage();
 });
 
 function showNextMessage() {
     $.get("get.message.php", function(data) {
         $("#message").html(data);
+    })
+    .done(function() {
+        randomTransition();
     });
-    randomTransition();
 }
 
 function randomFont() {
-    var fontArray = new Array('Rosario', 'Droid Serif', 'Fauna One');
+    var fontArray = new Array('Raleway');
     return fontArray[Math.floor(Math.random()*fontArray.length)];
 }
 
@@ -40,37 +48,55 @@ function randomTransition() {
 function fromRight () {
     $("#message").css({
         "left": "50%",
-        "top": ($(window).height() - $("#message").outerHeight())/2.4
+        "top": ($(window).height() - $("#message").outerHeight())/vOffset
     }).animate({
         left: "0%",
         opacity: 1
-    }, 3000);
+    }, tranTime).delay(holdTime).animate({
+        opacity: 0
+    }, tranTime, function() {
+        showNextMessage();
+    });
 }
 
 function fromLeft () {
     $("#message").css({
-        "top": ($(window).height() - $("#message").outerHeight())/2.4,
+        "top": ($(window).height() - $("#message").outerHeight())/vOffset,
         "left": "-50%"
     }).animate({
         left: "0%",
         opacity: 1
-    }, 3000);
+    }, tranTime).delay(holdTime).animate({
+        opacity: 0
+    }, tranTime, function() {
+        showNextMessage();
+    });
 }
 
 function fromTop () {
     $("#message").css({
+        "top": "0%",
         "left": "0%"
     }).animate({
-        "top": ($(window).height() - $("#message").outerHeight())/2.4,
+        "top": ($(window).height() - $("#message").outerHeight())/vOffset,
         opacity: 1
-    }, 3000);
+    }, tranTime).delay(holdTime).animate({
+        opacity: 0
+    }, tranTime, function() {
+        showNextMessage();
+    });
 }
 
 function fromBottom() {
     $("#message").css({
-        "top": "80%"
+        "top": "70%",
+        "left": "0%"
     }).animate({
-        "top": ($(window).height() - $("#message").outerHeight())/2.4,
+        "top": ($(window).height() - $("#message").outerHeight())/vOffset,
         opacity: 1
-    }, 3000);
+    }, tranTime).delay(holdTime).animate({
+        opacity: 0
+    }, tranTime, function() {
+        showNextMessage();
+    });
 }

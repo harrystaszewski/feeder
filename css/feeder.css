@@ -12,7 +12,7 @@
 }
 
 html, body {
-    background-color: #ccffcc;
+    background-color: #ffffff;
 }
 
 #canvas {
@@ -33,3 +33,19 @@ html, body {
     padding-right: 5%;
 }
 
+.tweet_details {
+    font-size: 32px;
+    color: #666666;
+    padding-top: 20px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 282px;
+    background-image: url('../images/footer.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 100%;
+}
