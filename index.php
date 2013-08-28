@@ -19,9 +19,7 @@
     </head>
     <body>
         <div id="canvas">
-            <div id="message">I am a tweet. I have exactly 140 characters.
-                If you want to make sure that I only have 140 characters you can check for yourself.
-                0123456789</div>
+            <div id="message">Message starts here.</div>
         </div>
     </body>
 </html>

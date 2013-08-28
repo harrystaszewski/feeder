@@ -1,7 +1,14 @@
 $(function() {
     setTimeout("location.reload(false);",10000);
-    randomTransition();
+    showNextMessage();
 });
+
+function showNextMessage() {
+    $.get("get.message.php", function(data) {
+        $("#message").html(data);
+    });
+    randomTransition();
+}
 
 function randomFont() {
     var fontArray = new Array('Rosario', 'Droid Serif', 'Fauna One');
