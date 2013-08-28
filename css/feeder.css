@@ -20,6 +20,7 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    font-family: sans-serif;
 }
 
 #message {
@@ -37,6 +38,13 @@ html, body {
     font-size: 32px;
     color: #666666;
     padding-top: 20px;
+}
+
+#admin_messages {
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    overflow: auto;
 }
 
 #footer {
