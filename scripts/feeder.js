@@ -3,9 +3,7 @@ var holdTime = 5000;
 var vOffset = 3;
 
 $(function() {
-    //window.setInterval(function() {
-    //    showNextMessage();
-    //}, ((tranTime * 2) + holdTime));
+    $.ajaxSetup({cache: false});
     showNextMessage();
 });
 

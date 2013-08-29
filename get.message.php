@@ -3,7 +3,7 @@ require_once('classes/class.appsettings.php');
 require_once('classes/class.dbmanager.php');
 $appsettings = AppSettings::getInstance();
 $dbCon = DBManager::getDBDriver($appsettings->getDBDriver());
-$sql = "SELECT * FROM tweets ORDER BY tweet_display_count, tweet_twitter_id_str ASC LIMIT 1";
+$sql = "SELECT * FROM tweets WHERE tweet_enabled = 1 ORDER BY tweet_display_count, tweet_twitter_id_str ASC LIMIT 1";
 $result = $dbCon->execute($sql, array());
 if ($result)
 {
