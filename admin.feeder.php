@@ -34,7 +34,7 @@ $dbCon = DBManager::getDBDriver($appsettings->getDBDriver());
                         <th>Tweet Text</td>
                         <th>User Name</td>
                         <th>Screen Name</td>
-                        <th>Display Count</td>
+                        <th>Display Cycle</td>
                         <th>Tweeted At</td>
                         <th>Enabled</th>
                     </tr>
